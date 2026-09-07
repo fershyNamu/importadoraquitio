@@ -154,7 +154,7 @@ button {
 /* HERO */
 
 .hero {
-    min-height: 500px;
+    min-height: 550px;
     position: relative;
     overflow: hidden;
     background:
@@ -645,63 +645,6 @@ section {
     color: var(--gris-texto);
 }
 
-/* ================= NOSOTROS ================= */
-
-.about-section {
-    position: relative;
-    overflow: hidden;
-}
-
-.about-content {
-    max-width: 750px;
-    margin-left: max(
-        30px,
-        calc((100% - 1190px) / 2)
-    );
-
-    position: relative;
-    z-index: 3;
-}
-
-.about-section .section-tag {
-    color: rgb(0, 0, 0);
-}
-
-.about-section h2 {
-    color: rgb(0, 0, 0);
-    max-width: 650px;
-}
-
-.about-section h2 span {
-    color: #000000;
-}
-
-.about-section p {
-    max-width: 650px;
-    color: rgba(34, 33, 33, 0.76);
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-/* BOTÓN */
-
-.about-button {
-    display: inline-block;
-    margin-top: 25px;
-    background: var(--rojo);
-    color: white;
-    padding: 15px 23px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 700;
-    transition: 0.3s ease;
-}
-
-.about-button:hover {
-    background: var(--rojo-oscuro);
-    transform: translateY(-3px);
-}
-
 /* DECORACIONES */
 
 .about-decoration {
@@ -753,7 +696,7 @@ section {
         );
 
     color: white;
-    padding: 70px 30px 20px;
+    padding: 40px 30px 15px;
     position: relative;
     overflow: hidden;
 }
