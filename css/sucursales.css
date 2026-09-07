@@ -154,7 +154,7 @@ button {
 /* HERO */
 
 .hero {
-    min-height: 720px;
+    min-height: 500px;
     position: relative;
     overflow: hidden;
     background:
