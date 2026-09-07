@@ -1033,8 +1033,8 @@ section {
     background: 
         linear-gradient(
             135deg,
-            var(--blanco-puro),
-            var(--blanco)
+            #ece6e644,
+            var(--azul-suave)
         );
     padding: 25px;
     border-radius: 15px;
