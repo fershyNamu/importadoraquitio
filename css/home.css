@@ -836,7 +836,7 @@ section {
 }
 
 .about-content {
-    max-width: 750px;
+    max-width: 800px;
     margin-left: max(
         30px,
         calc((100% - 1190px) / 2)
@@ -864,25 +864,6 @@ section {
     color: rgba(255,255,255,0.76);
     line-height: 1.8;
     margin-bottom: 15px;
-}
-
-/* BOTÓN */
-
-.about-button {
-    display: inline-block;
-    margin-top: 25px;
-    background: var(--rojo);
-    color: white;
-    padding: 15px 23px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 700;
-    transition: 0.3s ease;
-}
-
-.about-button:hover {
-    background: var(--rojo-oscuro);
-    transform: translateY(-3px);
 }
 
 /* DECORACIONES */
