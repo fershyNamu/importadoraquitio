@@ -139,6 +139,24 @@ button {
     transform: translateY(-3px);
     box-shadow: 0 12px 25px rgba(232, 23, 19, 0.28);
 }
+/* BOTÓN NAVBAR ADMIN */
+
+.nav-button2 {
+    background: #1c1c1d1a;
+    color: #f8f9fb1a;
+    padding: 13px 10px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(250, 245, 245, 0.2);
+    transition: 0.3s ease;
+}
+
+.nav-button:hover {
+    background: var(--rojo-oscuro);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(94, 84, 84, 0.28);
+}
 
 /* MENÚ MÓVIL */
 
