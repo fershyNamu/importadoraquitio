@@ -7,9 +7,9 @@ const prevButton = document.getElementById("prevSlide");
 const menuButton = document.getElementById("menuButton");
 const navMenu = document.querySelector(".nav-menu");
 
-    menuButton.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-    });
+menuButton.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
 
 let currentSlide = 0;
 let autoSlide;

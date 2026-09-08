@@ -999,7 +999,7 @@ section {
 }
 
 .contact-container {
-    max-width: 100%;
+    max-width: 80%;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1008,11 +1008,11 @@ section {
 }
 
 .contact-info h2 {
-    max-width: 100%
+    max-width: 80%
 }
 
 .contact-info > p {
-    max-width: 100%;
+    max-width: 80%;
     color: var(--gris-texto);
     line-height: 1.7;
     margin-bottom: 30px;
