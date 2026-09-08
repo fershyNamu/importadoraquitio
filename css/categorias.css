@@ -321,36 +321,6 @@ button {
     background-position: right;
 }
 
-/* HERO 2*/
-
-.hero-bg-2 {
-    background:
-        linear-gradient(
-            120deg,
-            rgba(232, 23, 19, 0.94) 0%,
-            rgba(232, 23, 19, 0.78) 42%,
-            rgba(2, 31, 79, 0.97) 65%,
-            rgba(3, 33, 82, 0.912) 100%
-        );
-    background-size: cover;
-    background-position: right;
-}
-
-/* HERO 3 */
-
-.hero-bg-3 {
-    background:
-        linear-gradient(
-            100deg,
-            rgba(232, 23, 19, 0.786) 0.01%,
-            rgba(3, 31, 79, 0.97) 75%,
-            rgba(3, 33, 82, 0.97) 70%,
-            rgba(3, 14, 67, 0.786) 100%
-        );
-    background-size: cover;
-    background-position: right;
-}
-
 /* DECORACIÓN DEL HERO */
 
 .hero::before {
