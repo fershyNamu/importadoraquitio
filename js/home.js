@@ -14,9 +14,7 @@ menuButton.addEventListener("click", () => {
 let currentSlide = 0;
 let autoSlide;
 
-/* 
-   MOSTRAR SLIDE
- */
+/* MOSTRAR SLIDE */
 
 function showSlide(index) {
 
@@ -35,10 +33,7 @@ function showSlide(index) {
     currentSlide = index;
 }
 
-
-/* 
-   SIGUIENTE
- */
+/* SIGUIENTE */
 
 function nextSlide() {
 
@@ -51,10 +46,7 @@ function nextSlide() {
     showSlide(next);
 }
 
-
-/* 
-   ANTERIOR
- */
+/* ANTERIOR */
 
 function previousSlide() {
 
@@ -67,10 +59,7 @@ function previousSlide() {
     showSlide(previous);
 }
 
-
-/* 
-   BOTONES
- */
+/* BOTONES */
 
 nextButton.addEventListener("click", () => {
 
@@ -90,9 +79,7 @@ prevButton.addEventListener("click", () => {
 });
 
 
-/* 
-   DOTS
- */
+/* DOTS */
 
 dots.forEach((dot, index) => {
 
@@ -107,9 +94,7 @@ dots.forEach((dot, index) => {
 });
 
 
-/* 
-   MENÚ MÓVIL
- */
+/* MENÚ MÓVIL */
 
 if (menuButton && navMenu) {
 
@@ -119,10 +104,7 @@ if (menuButton && navMenu) {
 
 }
 
-
-/* 
-   AUTO SLIDER
- */
+/* AUTO SLIDER */
 
 function startAutoSlide() {
 
@@ -134,7 +116,6 @@ function startAutoSlide() {
 
 }
 
-
 function restartAutoSlide() {
 
     clearInterval(autoSlide);
@@ -142,6 +123,5 @@ function restartAutoSlide() {
     startAutoSlide();
 
 }
-
 
 startAutoSlide();
