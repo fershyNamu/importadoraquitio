@@ -25,10 +25,10 @@
             
             <nav class="nav-menu">
                 <a href="home.html" >Inicio</a>
-                <a href="categorias.html" class="active">Categorías</a>
+                <a href="categorias.html"class="active" >Categorías</a>
                 <a href="productos.html">Productos</a>
-                <a href="sucursales.html" >Sucursales</a>
-                <a href="">Contacto</a>
+                <a href="sucursales.html">Sucursales</a>
+                <a href="contacto.html">Contacto</a>
             </nav>
 
             <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos." class="nav-button">
@@ -61,42 +61,316 @@
                     <div class="hero-text">
 
                         <span class="hero-tag">
-                            IMPORTADORA & DISTRIBUIDORA QUITIO
+                            CATÁLOGO COMPLETO
                         </span>
 
                         <h1>
-                            Conoce todos nuestros
-                        <span>productos</span>
+                            Explora todas
+                        <span>nuestras categorías.</span>
                         </h1>
 
                         <p>
-                            Conoce nuestra amplia gama de productos, desde artículos para el hogar hasta articulos deportivos. Encuentra todo lo que necesitas en un solo lugar.
-                        </p>
-                            <section class="about-section" id="nosotros">
-                                
-                                <div class="footer-shapes">
-                                     <span class="shape shape-1"></span>
-                                     <span class="shape shape-2"></span>
-                                     <span class="shape shape-3"></span>
-                                     <span class="shape shape-4"></span>
-                                     <span class="shape shape-5"></span>
-                                </div>
-                                
-                                <div class="about-decoration"></div>
-                    
-                            </section>
+                            Desde el hogar hasta la ferretería: encuentra la línea
+                            de productos que necesitas para tu negocio.
                         </p>
 
+                    <div class="hero-buttons">
+
+                        <a href="#categorias" class="btn-primary">
+                            Ver categorías
+                        <span>→</span>
+                        </a>
+
+                        <a href="productos.html" class="btn-secondary">
+                            Ir a productos
+                        </a>
+
+                    </div>
+
                 </div>
-                
+
+                    <div class="hero-image">
+                        <img src="img/lavadora.jpeg" alt="Productos de Importadora Quito">
+                    </div>
                     </div>
 
                 </article>
 
             </div>
 
+
+            <!-- FLECHAS -->
+
+            <button class="slider-arrow arrow-left" id="prevSlide">
+                
+            </button>
+
+            <button class="slider-arrow arrow-right" id="nextSlide">
+                
+            </button>
+
+
+            <!-- INDICADORES -->
+
+            <div class="slider-dots">
+
+                <button class="dot active" data-slide="0"></button>
+                
+            </div>
+
         </section>
 
+
+        <!-- ================= CATEGORÍAS ================= -->
+
+        <section class="full-categories" id="categorias">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    NUESTRAS LÍNEAS
+                </span>
+
+                <h2>
+                    Todas nuestras categorías
+                </h2>
+
+                <p>
+                    Somos importadores y distribuidores de una amplia
+                    variedad de productos. Explora cada categoría o
+                    búscala directamente.
+                </p>
+
+            </div>
+
+            <div class="cat-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="catSearch" placeholder="Buscar una categoría o producto...">
+            </div>
+
+            <div class="cat-grid" id="catGrid">
+
+                <!-- COCINA -->
+                <article class="cat-card" data-search="cocina cafeteras coladores de acero ollas de acero bandejas de acero tazones de acero dispensadores de aceite jarras medidoras infusoras tablas para picar porta leche exprimidores de limón porta servilletas">
+                    <div class="cat-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+                    <h3>Cocina</h3>
+                    <p class="cat-desc">Todo para equipar tu cocina, de la cafetera a la tabla de picar.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Cafeteras</span>
+                        <span class="cat-tag">Coladores de acero</span>
+                        <span class="cat-tag">Ollas de acero</span>
+                        <span class="cat-tag">Bandejas de acero</span>
+                        <span class="cat-tag">Tazones de acero</span>
+                        <span class="cat-tag">Dispensadores de aceite</span>
+                        <span class="cat-tag">Jarras medidoras</span>
+                        <span class="cat-tag">Infusoras</span>
+                        <span class="cat-tag">Tablas para picar</span>
+                        <span class="cat-tag">Porta leche</span>
+                        <span class="cat-tag">Exprimidores de limón</span>
+                        <span class="cat-tag">Porta servilletas</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Cocina" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- VAJILLA Y PLATOS -->
+                <article class="cat-card" data-search="vajilla y platos platos cerámica melamine opal tazas de cerámica copas vasos cristalería cubiertos">
+                    <div class="cat-icon"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>Vajilla y Platos</h3>
+                    <p class="cat-desc">Vajillas y cristalería para servir con estilo cada día.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Platos de cerámica</span>
+                        <span class="cat-tag">Platos de melamine</span>
+                        <span class="cat-tag">Platos opal</span>
+                        <span class="cat-tag">Tazas de cerámica</span>
+                        <span class="cat-tag">Copas</span>
+                        <span class="cat-tag">Vasos</span>
+                        <span class="cat-tag">Cristalería</span>
+                        <span class="cat-tag">Cubiertos</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Vajilla%20y%20Platos" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- DECORACIÓN -->
+                <article class="cat-card" data-search="decoración floreros de madera floreros de vidrio espejos acrílicos portaretratos porta retratos de vidrio piedras decorativas chimeneas led vallas y césped decorativo bailarinas de repostería alfombras cortinas para baño vinil adhesivo">
+                    <div class="cat-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h3>Decoración</h3>
+                    <p class="cat-desc">Detalles que transforman cualquier espacio del hogar.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Floreros de madera</span>
+                        <span class="cat-tag">Floreros de vidrio</span>
+                        <span class="cat-tag">Espejos acrílicos</span>
+                        <span class="cat-tag">Portarretratos</span>
+                        <span class="cat-tag">Portarretratos de vidrio</span>
+                        <span class="cat-tag">Piedras decorativas</span>
+                        <span class="cat-tag">Chimeneas LED</span>
+                        <span class="cat-tag">Vallas y césped decorativo</span>
+                        <span class="cat-tag">Bailarinas de repostería</span>
+                        <span class="cat-tag">Alfombras</span>
+                        <span class="cat-tag">Cortinas para baño</span>
+                        <span class="cat-tag">Vinil adhesivo</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Decoración" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- ORGANIZACIÓN DEL HOGAR -->
+                <article class="cat-card" data-search="organización del hogar estantes ganchos plateras basureros zapateras soportes de tv mesas frascos de vidrio">
+                    <div class="cat-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h3>Organización del hogar</h3>
+                    <p class="cat-desc">Soluciones prácticas para mantener cada rincón en orden.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Estantes</span>
+                        <span class="cat-tag">Ganchos</span>
+                        <span class="cat-tag">Plateras</span>
+                        <span class="cat-tag">Basureros</span>
+                        <span class="cat-tag">Zapateras</span>
+                        <span class="cat-tag">Soportes de TV</span>
+                        <span class="cat-tag">Mesas</span>
+                        <span class="cat-tag">Frascos de vidrio</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Organización%20del%20hogar" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- LIMPIEZA -->
+                <article class="cat-card" data-search="limpieza trapeadores limpia vidrios tablas para planchar atrapamoscas">
+                    <div class="cat-icon"><i class="fa-solid fa-broom"></i></div>
+                    <h3>Limpieza</h3>
+                    <p class="cat-desc">Herramientas esenciales para un hogar impecable.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Trapeadores</span>
+                        <span class="cat-tag">Limpia vidrios</span>
+                        <span class="cat-tag">Tablas para planchar</span>
+                        <span class="cat-tag">Atrapamoscas</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Limpieza" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- DEPORTES Y FITNESS -->
+                <article class="cat-card" data-search="deportes y fitness balones bandas de yoga conos pelotas de yoga patines scooter tomatodos">
+                    <div class="cat-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3>Deportes y Fitness</h3>
+                    <p class="cat-desc">Equipo para entrenar, jugar y mantenerte activo.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Balones</span>
+                        <span class="cat-tag">Bandas de yoga</span>
+                        <span class="cat-tag">Conos</span>
+                        <span class="cat-tag">Pelotas de yoga</span>
+                        <span class="cat-tag">Patines</span>
+                        <span class="cat-tag">Scooters</span>
+                        <span class="cat-tag">Artículos de fitness</span>
+                        <span class="cat-tag">Tomatodos</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Deportes%20y%20Fitness" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- SALUD Y CUIDADO PERSONAL -->
+                <article class="cat-card" data-search="salud y cuidado personal terapia rodilleras fajas bolsas de agua caliente cepillos de dientes">
+                    <div class="cat-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Salud y Cuidado Personal</h3>
+                    <p class="cat-desc">Productos pensados para tu bienestar diario.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Rodilleras y fajas</span>
+                        <span class="cat-tag">Bolsas de agua caliente</span>
+                        <span class="cat-tag">Cepillos de dientes</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Salud%20y%20Cuidado%20Personal" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- NIÑOS Y BEBÉS -->
+                <article class="cat-card" data-search="niños y bebés legos peluches cubo rubik loncheras pañaleras set de animalitos alcancías">
+                    <div class="cat-icon"><i class="fa-solid fa-baby-carriage"></i></div>
+                    <h3>Niños y Bebés</h3>
+                    <p class="cat-desc">Todo lo que necesitan los más pequeños de la casa.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Artículos para bebés</span>
+                        <span class="cat-tag">Legos</span>
+                        <span class="cat-tag">Peluches</span>
+                        <span class="cat-tag">Cubos rubik</span>
+                        <span class="cat-tag">Loncheras</span>
+                        <span class="cat-tag">Pañaleras</span>
+                        <span class="cat-tag">Set de animalitos</span>
+                        <span class="cat-tag">Alcancías</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Niños%20y%20Bebés" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- VIAJE Y ACCESORIOS -->
+                <article class="cat-card" data-search="viaje y accesorios almohadas de viaje paraguas parasoles mochilas hieleras">
+                    <div class="cat-icon"><i class="fa-solid fa-suitcase-rolling"></i></div>
+                    <h3>Viaje y Accesorios</h3>
+                    <p class="cat-desc">Compañeros ideales para tus próximas aventuras.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Almohadas de viaje</span>
+                        <span class="cat-tag">Paraguas</span>
+                        <span class="cat-tag">Parasoles</span>
+                        <span class="cat-tag">Mochilas</span>
+                        <span class="cat-tag">Hieleras</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Viaje%20y%20Accesorios" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- MASCOTAS -->
+                <article class="cat-card" data-search="mascotas artículos para mascotas">
+                    <div class="cat-icon"><i class="fa-solid fa-paw"></i></div>
+                    <h3>Mascotas</h3>
+                    <p class="cat-desc">Artículos para consentir y cuidar a tu mejor amigo.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Artículos para mascotas</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Mascotas" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- FERRETERÍA -->
+                <article class="cat-card" data-search="ferretería artículos de ferretería">
+                    <div class="cat-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <h3>Ferretería</h3>
+                    <p class="cat-desc">Herramientas y accesorios para cada proyecto.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Artículos de ferretería</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Ferretería" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+                <!-- ELECTRODOMÉSTICOS Y ELECTRÓNICA -->
+                <article class="cat-card" data-search="electrodomésticos y electrónica ventiladores parlantes">
+                    <div class="cat-icon"><i class="fa-solid fa-plug"></i></div>
+                    <h3>Electrodomésticos y Electrónica</h3>
+                    <p class="cat-desc">Tecnología y electrodomésticos para el día a día.</p>
+                    <div class="cat-tags">
+                        <span class="cat-tag">Ventiladores</span>
+                        <span class="cat-tag">Parlantes</span>
+                    </div>
+                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20productos%20de%20Electrodomésticos%20y%20Electrónica" class="cat-cta" target="_blank">
+                        Consultar productos <span>→</span>
+                    </a>
+                </article>
+
+            </div>
+
+            <p class="cat-empty" id="catEmpty">No encontramos categorías que coincidan con tu búsqueda.</p>
+
+        </section>
 
     </main>
 
@@ -143,7 +417,7 @@
 
                 <h3>Navegación</h3>
                 <a href="home.html">Inicio</a>
-                <a href="categorias.html">Categorías</a>
+                <a href="#categorias">Categorías</a>
                 <a href="productos.html">Productos</a>
                 <a href="sucursales.html">Sucursales</a>
 
@@ -165,12 +439,29 @@
         <div class="footer-bottom">
 
             <p>
-                © 2026 ImportadoraQuitio. Todos los derechos reservados. 
+                © 2026 Importadora. Todos los derechos reservados.
             </p>
 
         </div>
 
     </footer>
+
+
+    <!-- ================= WHATSAPP ================= -->
+
+    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos."
+        class="floating-whatsapp"
+        target="_blank"
+        aria-label="Contactar por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/home.js"></script>
+    <script src="js/categorias.js"></script>
 
 </body>
 </html>
