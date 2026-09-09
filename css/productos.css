@@ -1,20 +1,20 @@
 /* BOTÓN NAVBAR ADMIN */
 
 .nav-button2 {
-    background: rgba(252, 255, 251, 0.1);
-    color: #f8f9fb07;
-    padding: 13px 10px;
+    background: rgba(252, 255, 251, 0);
+    color: #00000000;
+    padding: 10px 10px;
     border-radius: 50px;
-    font-size: 5px;
-    font-weight: 50;
-    box-shadow: 0 8px 20px rgba(250, 245, 245, 0.2);
+    font-size: 20px;
+    font-weight: 20;
+    box-shadow: 0 8px 20px rgba(250, 245, 245, 0.001);
     transition: 0.3s ease;
 }
 
 .nav-button2:hover {
-    background: rgba(252, 255, 251, 0.2);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(94, 84, 84, 0.28);
+    background: rgba(252, 255, 251, 0.051);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 25px rgba(94, 84, 84, 0.064);
 }
 
 /* ================= PRODUCTOS - EXTRAS ================= */
