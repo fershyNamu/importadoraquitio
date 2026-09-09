@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Importadora Quitio | Productos para todos</title>
-    <link rel="stylesheet" href="css/home.css">
+    <title>Productos | Importadora Quitio</title>
+    <link rel="stylesheet" href="css/categorias.css">
+    <link rel="stylesheet" href="css/productos.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,19 +23,17 @@
             <a href="home.html" class="logo">
                 <img src="img/logo.png" alt="Logo de la importadora">
             </a>
-            
+
             <nav class="nav-menu">
-                <a href="home.html" class="active">Inicio</a>
+                <a href="home.html">Inicio</a>
                 <a href="categorias.html">Categorías</a>
-                <a href="productos.html">Productos</a>
+                <a href="productos.html" class="active">Productos</a>
                 <a href="sucursales.html">Sucursales</a>
+                <a href="contacto.html">Contacto</a>
             </nav>
 
             <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos." class="nav-button">
                 Contáctanos
-            </a>
-            <a href="http://127.0.0.1:8000/admin/login/?next=/admin/" class="nav-button2">
-                Administración
             </a>
 
             <button class="menu-button" id="menuButton">
@@ -54,47 +53,245 @@
 
             <div class="hero-slider">
 
-                <!-- SLIDE 1 -->
-
                 <article class="hero-slide active">
 
                     <div class="hero-background hero-bg-1"></div>
                     <div class="hero-content">
-                    <div class="hero-text">
+                        <div class="hero-text">
 
-                        <span class="hero-tag">
-                            IMPORTADORA & DISTRIBUIDORA
-                        </span>
+                            <span class="hero-tag">
+                                CATÁLOGO DE PRODUCTOS
+                            </span>
 
-                        <h1>
-                            Todo lo que buscas,
-                        <span>en un solo lugar.</span>
-                        </h1>
+                            <h1>
+                                Encuentra el producto
+                                <span>que estás buscando.</span>
+                            </h1>
 
-                        <p>
-                            Descubre nuestra variedad de productos para
-                            el hogar, negocios y mucho más.
-                        </p>
+                            <p>
+                                Filtra por categoría o busca directamente el producto
+                                que necesitas para tu hogar o negocio.
+                            </p>
 
-                    <div class="hero-buttons">
+                            <div class="hero-buttons">
+                                <a href="categorias.html" class="btn-secondary">
+                                    Ver categorías
+                                </a>
+                            </div>
 
-                        <a href="#destacados" class="btn-primary">
-                            Explorar productos
-                        <span>→</span>
-                        </a>
+                        </div>
 
-                    </div>
-
-                </div>
-
-                    <div class="hero-image">
-                        <img src="img/lavadora.jpeg" alt="Productos de Importadora Quito">
-                    </div>
+                        <div class="hero-image">
+                            <img src="img/lavadora.jpeg" alt="Productos de Importadora Quito">
+                        </div>
                     </div>
 
                 </article>
 
-                <!-- ================= FOOTER ================= -->
+            </div>
+
+            <div class="slider-dots">
+                <button class="dot active" data-slide="0"></button>
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRODUCTOS ================= -->
+
+        <section class="products-section full-products" id="productos">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    NUESTRO CATÁLOGO
+                </span>
+
+                <h2>
+                    Productos destacados
+                </h2>
+
+                <p>
+                    Esta es una vista de ejemplo. Reemplaza cada tarjeta con tus
+                    productos reales: foto, nombre, categoría y precio.
+                </p>
+
+            </div>
+
+            <!-- BUSCADOR -->
+
+            <div class="cat-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="prodSearch" placeholder="Buscar un producto...">
+            </div>
+
+            <!-- FILTROS POR CATEGORÍA -->
+
+            <div class="prod-filters" id="prodFilters">
+                <button class="prod-filter active" data-filter="todos">Todos</button>
+                <button class="prod-filter" data-filter="cocina">Cocina</button>
+                <button class="prod-filter" data-filter="vajilla">Vajilla y Platos</button>
+                <button class="prod-filter" data-filter="decoracion">Decoración</button>
+                <button class="prod-filter" data-filter="organizacion">Organización</button>
+                <button class="prod-filter" data-filter="limpieza">Limpieza</button>
+                <button class="prod-filter" data-filter="deportes">Deportes y Fitness</button>
+                <button class="prod-filter" data-filter="ninos">Niños y Bebés</button>
+                <button class="prod-filter" data-filter="mascotas">Mascotas</button>
+            </div>
+
+            <!-- GRID DE PRODUCTOS (EJEMPLOS) -->
+
+            <div class="products-grid" id="prodGrid">
+
+                <!-- PRODUCTO 1 -->
+                <article class="product-card" data-category="cocina" data-search="cafetera cocina acero">
+                    <div class="product-image">
+                        <span class="product-tag">EJEMPLO</span>
+                        <div class="image-placeholder">
+                            <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Cocina</span>
+                        <h3>Cafetera de acero inoxidable</h3>
+                        <p>Capacidad 1.2L, base antideslizante. Reemplaza esta descripción por la real.</p>
+                        <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20la%20Cafetera%20de%20acero%20inoxidable" class="product-link" target="_blank">
+                            Consultar precio →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PRODUCTO 2 -->
+                <article class="product-card" data-category="vajilla" data-search="juego de platos ceramica vajilla">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Vajilla y Platos</span>
+                        <h3>Juego de platos de cerámica x12</h3>
+                        <p>Set completo para 4 personas: planos, hondos y postre.</p>
+                        <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20el%20Juego%20de%20platos%20de%20cerámica" class="product-link" target="_blank">
+                            Consultar precio →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PRODUCTO 3 -->
+                <article class="product-card" data-category="decoracion" data-search="florero vidrio decoracion sala">
+                    <div class="product-image">
+                        <span class="product-tag">NUEVO</span>
+                        <div class="image-placeholder">
+                            <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Decoración</span>
+                        <h3>Florero de vidrio soplado</h3>
+                        <p>Diseño moderno, ideal para sala o comedor. Alto 30cm.</p>
+                        <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20el%20Florero%20de%20vidrio%20soplado" class="product-link" target="_blank">
+                            Consultar precio →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PRODUCTO 4 -->
+                <article class="product-card" data-category="organizacion" data-search="estante organizacion repisa">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Organización</span>
+                        <h3>Estante flotante de 3 niveles</h3>
+                        <p>Fácil instalación, soporta hasta 5kg por nivel.</p>
+                        <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20el%20Estante%20flotante" class="product-link" target="_blank">
+                            Consultar precio →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PRODUCTO 5 -->
+                <article class="product-card" data-category="limpieza" data-search="trapeador limpieza hogar">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Limpieza</span>
+                        <h3>Trapeador giratorio 360°</h3>
+                        <p>Incluye balde con exprimidor y dos repuestos de microfibra.</p>
+                        <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20el%20Trapeador%20giratorio" class="product-link" target="_blank">
+                            Consultar precio →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PRODUCTO 6 -->
+                <article class="product-card" data-category="deportes" data-search="balon futbol deportes">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Deportes y Fitness</span>
+                        <h3>Balón de fútbol N.5</h3>
+                        <p>Material sintético resistente, ideal para uso en cancha o césped.</p>
+                        <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20el%20Balón%20de%20fútbol" class="product-link" target="_blank">
+                            Consultar precio →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PRODUCTO 7 -->
+                <article class="product-card" data-category="ninos" data-search="peluche niños bebes juguete">
+                    <div class="product-image">
+                        <span class="product-tag">OFERTA</span>
+                        <div class="image-placeholder">
+                            <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Niños y Bebés</span>
+                        <h3>Peluche osito 35cm</h3>
+                        <p>Suave, hipoalergénico, disponible en varios colores.</p>
+                        <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20el%20Peluche%20osito" class="product-link" target="_blank">
+                            Consultar precio →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PRODUCTO 8 -->
+                <article class="product-card" data-category="mascotas" data-search="comedero mascotas perro gato">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Mascotas</span>
+                        <h3>Comedero doble acero inoxidable</h3>
+                        <p>Antideslizante, apto para perros y gatos de cualquier tamaño.</p>
+                        <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20información%20sobre%20el%20Comedero%20doble" class="product-link" target="_blank">
+                            Consultar precio →
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="cat-empty" id="prodEmpty">No encontramos productos que coincidan con tu búsqueda.</p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
 
     <footer class="footer">
 
@@ -135,9 +332,9 @@
             <div class="footer-column">
 
                 <h3>Navegación</h3>
-                <a href="#">Inicio</a>
-                <a href="#categorias">Categorías</a>
-                <a href="#destacados">Productos</a>
+                <a href="home.html">Inicio</a>
+                <a href="categorias.html">Categorías</a>
+                <a href="#productos">Productos</a>
                 <a href="sucursales.html">Sucursales</a>
 
             </div>
@@ -180,6 +377,7 @@
     <!-- JAVASCRIPT -->
 
     <script src="js/home.js"></script>
+    <script src="js/productos.js"></script>
 
 </body>
 </html>
