@@ -93,7 +93,6 @@ dots.forEach((dot, index) => {
 
 });
 
-
 /* MENÚ MÓVIL */
 
 if (menuButton && navMenu) {

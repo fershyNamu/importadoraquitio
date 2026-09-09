@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar sesión | Importaciones Quito</title>
+
+    <link rel="stylesheet" href="{% static 'admin-login.css' %}">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <!-- LOGO / MARCA -->
+            <div class="brand">
+                <div class="brand-icon">IQ</div>
+
+                <h1>Importaciones Quito</h1>
+
+                <p>Panel administrativo</p>
+            </div>
+
+
+            <!-- MENSAJE -->
+            <div class="welcome">
+                <h2>Bienvenido</h2>
+                <p>Ingresa tus datos para continuar</p>
+            </div>
+
+
+            <!-- ERRORES -->
+            {% if form.errors %}
+                <div class="error-message">
+                    Usuario o contraseña incorrectos.
+                </div>
+            {% endif %}
+
+
+            <!-- FORMULARIO -->
+            <form method="post" action="{% url 'admin:login' %}">
+
+                {% csrf_token %}
+
+                <input type="hidden" name="next" value="{{ next }}">
+
+
+                <!-- USUARIO -->
+                <div class="input-group">
+
+                    <label for="id_username">
+                        Usuario
+                    </label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        id="id_username"
+                        placeholder="Ingresa tu usuario"
+                        autocomplete="username"
+                        required
+                        autofocus
+                    >
+
+                </div>
+
+
+                <!-- CONTRASEÑA -->
+                <div class="input-group">
+
+                    <label for="id_password">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        id="id_password"
+                        placeholder="Ingresa tu contraseña"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- BOTÓN -->
+                <button type="submit" class="login-button">
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+
+            <!-- VOLVER -->
+            <a href="/" class="back-link">
+                ← Volver al sitio web
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
