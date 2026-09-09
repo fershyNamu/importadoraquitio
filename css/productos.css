@@ -1,8 +1,4 @@
 /* ================= PRODUCTOS - EXTRAS ================= */
-/* Este archivo solo agrega lo que categorias.css todavía no tiene:
-   los chips de filtro por categoría. Todo lo demás (buscador,
-   grid de productos, tarjetas, placeholder de imagen) ya está
-   definido en categorias.css y se reutiliza tal cual. */
 
 .full-products {
     background: var(--gris-claro);
