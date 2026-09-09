@@ -7,6 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let activeFilter = "todos";
 
+    // Si venimos desde categorias.html con ?categoria=cocina, por ejemplo,
+    // preseleccionamos ese filtro apenas carga la página.
+    function applyFilterFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        const categoria = params.get("categoria");
+
+        if (!categoria) return;
+
+        const targetButton = document.querySelector(`.prod-filter[data-filter="${categoria}"]`);
+
+        if (targetButton) {
+            filterButtons.forEach(b => b.classList.remove("active"));
+            targetButton.classList.add("active");
+            activeFilter = categoria;
+        }
+    }
+
     function applyFilters() {
         const query = (searchInput.value || "").toLowerCase().trim();
         let visibleCount = 0;
@@ -39,5 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (searchInput) {
         searchInput.addEventListener("input", applyFilters);
     }
+
+    // Al cargar: aplicar filtro de la URL (si existe) y mostrar resultados
+    applyFilterFromURL();
+    applyFilters();
 
 });
