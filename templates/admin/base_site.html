@@ -1,0 +1,26 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}
+    Importaciones Quito | Panel Administrativo
+{% endblock %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'admin.css' %}">
+{% endblock %}
+
+{% block branding %}
+    <div id="site-name">
+        <a href="{% url 'admin:index' %}">
+            <span class="admin-logo">IQ</span>
+            <span class="admin-brand">
+                <strong>Importaciones Quito</strong>
+                <small>Panel administrativo</small>
+            </span>
+        </a>
+    </div>
+{% endblock %}
+
+{% block nav-global %}
+{% endblock %}

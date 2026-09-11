@@ -1,0 +1,254 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block title %}
+    Panel Administrativo | Importaciones Quito
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-layout">
+
+    <!-- ==========================================
+         MENÚ LATERAL
+         ========================================== -->
+
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-title">
+            <span>MENÚ</span>
+        </div>
+
+
+        <a href="{% url 'admin:index' %}" class="sidebar-link active">
+            <span class="sidebar-icon">⌂</span>
+            <span>Inicio</span>
+        </a>
+
+
+        <a href="{% url 'admin:productos_producto_changelist' %}" class="sidebar-link">
+            <span class="sidebar-icon">▣</span>
+            <span>Productos</span>
+        </a>
+
+
+        <a href="{% url 'admin:auth_user_changelist' %}" class="sidebar-link">
+            <span class="sidebar-icon">♙</span>
+            <span>Usuarios</span>
+        </a>
+
+
+        <a href="{% url 'admin:auth_group_changelist' %}" class="sidebar-link">
+            <span class="sidebar-icon">♧</span>
+            <span>Grupos</span>
+        </a>
+
+
+        <div class="sidebar-divider"></div>
+
+
+        <a href="/" class="sidebar-link">
+            <span class="sidebar-icon">↗</span>
+            <span>Ver sitio web</span>
+        </a>
+
+    </aside>
+
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+         ========================================== -->
+
+    <section class="dashboard-main">
+
+
+        <!-- BIENVENIDA -->
+
+        <div class="dashboard-welcome">
+
+            <div>
+                <p class="welcome-label">
+                    PANEL ADMINISTRATIVO
+                </p>
+
+                <h1>
+                    ¡Bienvenido, {{ user.first_name|default:user.username }}! 👋
+                </h1>
+
+                <p>
+                    Gestiona los productos y el contenido de
+                    Importaciones Quito desde aquí.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             TARJETAS
+             ========================================== -->
+
+        <div class="dashboard-cards">
+
+
+            <!-- PRODUCTOS -->
+
+            <a href="{% url 'admin:productos_producto_changelist' %}"
+               class="dashboard-card">
+
+                <div class="card-icon blue">
+                    📦
+                </div>
+
+                <div class="card-info">
+                    <span>Catálogo</span>
+                    <strong>Productos</strong>
+                    <small>Gestionar productos →</small>
+                </div>
+
+            </a>
+
+
+            <!-- USUARIOS -->
+
+            <a href="{% url 'admin:auth_user_changelist' %}"
+               class="dashboard-card">
+
+                <div class="card-icon red">
+                    👥
+                </div>
+
+                <div class="card-info">
+                    <span>Administración</span>
+                    <strong>Usuarios</strong>
+                    <small>Gestionar usuarios →</small>
+                </div>
+
+            </a>
+
+
+            <!-- GRUPOS -->
+
+            <a href="{% url 'admin:auth_group_changelist' %}"
+               class="dashboard-card">
+
+                <div class="card-icon dark-blue">
+                    ⚙
+                </div>
+
+                <div class="card-info">
+                    <span>Permisos</span>
+                    <strong>Grupos</strong>
+                    <small>Gestionar grupos →</small>
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+        <!-- ==========================================
+             GESTIÓN
+             ========================================== -->
+
+        <div class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p>GESTIÓN</p>
+
+                    <h2>
+                        Contenido del sistema
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTOS -->
+
+            <div class="management-card">
+
+                <div class="management-icon">
+                    📦
+                </div>
+
+                <div class="management-info">
+
+                    <h3>
+                        Productos
+                    </h3>
+
+                    <p>
+                        Administra los productos disponibles
+                        en el catálogo de Importaciones Quito.
+                    </p>
+
+                </div>
+
+
+                <div class="management-actions">
+
+                    <a
+                        href="{% url 'admin:productos_producto_changelist' %}"
+                        class="manage-button blue-button"
+                    >
+                        Ver productos
+                    </a>
+
+                    <a
+                        href="{% url 'admin:productos_producto_add' %}"
+                        class="manage-button red-button"
+                    >
+                        + Añadir
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- USUARIOS -->
+
+            <div class="management-card">
+
+                <div class="management-icon">
+                    👥
+                </div>
+
+                <div class="management-info">
+
+                    <h3>
+                        Usuarios
+                    </h3>
+
+                    <p>
+                        Administra las cuentas que tienen acceso
+                        al panel administrativo.
+                    </p>
+
+                </div>
+
+
+                <div class="management-actions">
+
+                    <a
+                        href="{% url 'admin:auth_user_changelist' %}"
+                        class="manage-button blue-button"
+                    >
+                        Ver usuarios
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}
