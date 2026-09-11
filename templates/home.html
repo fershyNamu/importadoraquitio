@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Importadora Quitio | Productos para todos</title>
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,15 +20,15 @@
 
     <header class="navbar">
         <div class="nav-container">
-            <a href="home.html" class="logo">
-                <img src="img/logo.png" alt="Logo de la importadora">
+            <a href="{% url 'home' %}" class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="Logo de la importadora">
             </a>
             
             <nav class="nav-menu">
-                <a href="home.html" class="active">Inicio</a>
-                <a href="categorias.html">Categorías</a>
-                <a href="productos.html">Productos</a>
-                <a href="sucursales.html">Sucursales</a>
+                <a href="{% url 'home' %}" class="active">Inicio</a>
+                <a href="{% url 'categorias' %}">Categorías</a>
+                <a href="{% url 'productos' %}">Productos</a>
+                <a href="{% url 'sucursales' %}">Sucursales</a>
             </nav>
 
             <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos." class="nav-button">
@@ -75,7 +76,7 @@
 
                     <div class="hero-buttons">
 
-                        <a href="productos.html" class="btn-primary">
+                        <a href="{% url 'productos' %}" class="btn-primary">
                             Explorar productos
                         <span>→</span>
                         </a>
@@ -85,7 +86,7 @@
                 </div>
 
                     <div class="hero-image">
-                        <img src="img/lavadora.jpeg" alt="Productos de Importadora Quito">
+                        <img src="{% static 'img/lavadora.jpeg' %}" alt="Productos de Importadora Quito">
                     </div>
                     </div>
 
@@ -117,7 +118,7 @@
 
                         <div class="hero-buttons">
 
-                            <a href="categorias.html" class="btn-primary">
+                            <a href="{% url 'categorias' %}" class="btn-primary">
                                 Descubrir categorías
                                 <span>→</span>
                             </a>
@@ -127,7 +128,7 @@
                     </div>
 
                     <div class="hero-image">
-                        <img src="img/robot.jpeg" alt="Productos de Importadora Quito">
+                        <img src="{% static 'img/robot.jpeg' %}" alt="Productos de Importadora Quito">
                     </div>
                     
                 </div>
@@ -169,7 +170,7 @@
                         
                     </div>
                     <div class="hero-image">
-                            <img src="img/alfombra.jpeg" alt="Productos de Importadora Quito">
+                            <img src="{% static 'img/alfombra.jpeg' %}" alt="Productos de Importadora Quito">
                         </div>
                     </div>
 
@@ -226,7 +227,7 @@
 
             <div class="categories-grid">
 
-                <a href="productos.html?categoria=cocina#productos" class="category-card">
+                <a href="{% url 'productos' %}?categoria=cocina#productos" class="category-card">
                     
                     <div class="category-icon">
                         🏠
@@ -237,7 +238,7 @@
                 </a>
                 
                 
-                <a href="productos.html?categoria=decoracion#productos" class="category-card">
+                <a href="{% url 'productos' %}?categoria=decoracion#productos" class="category-card">
                     
                     <div class="category-icon">
                         ✏️
@@ -247,7 +248,7 @@
                 </a>
                 
                 
-                <a href="productos.html?categoria=mascotas#productos" class="category-card">
+                <a href="{% url 'productos' %}?categoria=mascotas#productos" class="category-card">
                     
                     <div class="category-icon">
                         🐾
@@ -257,7 +258,7 @@
                 </a>
 
 
-                <a href="productos.html?categoria=ninos#productos" class="category-card">
+                <a href="{% url 'productos' %}?categoria=ninos#productos" class="category-card">
 
                     <div class="category-icon">
                         🧸
@@ -267,7 +268,7 @@
                 </a>
 
 
-                <a href="productos.html?categoria=deportes#productos" class="category-card">
+                <a href="{% url 'productos' %}?categoria=deportes#productos" class="category-card">
 
                     <div class="category-icon">
                         🧘
@@ -278,7 +279,7 @@
                 </a>
 
 
-                <a href="productos.html?categoria=vajilla#productos" class="category-card">
+                <a href="{% url 'productos' %}?categoria=vajilla#productos" class="category-card">
                     
                     <div class="category-icon">
                         🍽️
@@ -310,7 +311,7 @@
 
                 </div>
 
-                <a href="productos.html" class="view-all">
+                <a href="{% url 'productos' %}" class="view-all">
                     Ver catálogo completo →
                 </a>
 
@@ -328,7 +329,7 @@
                         </span>
 
                         <div class="image-placeholder">
-                            <img src="img/alfombra.jpeg" alt="" width="100%">
+                            <img src="{% static 'img/alfombra.jpeg' %}" alt="" width="100%">
                         </div>
 
                     </div>
@@ -347,7 +348,7 @@
                             Código: IMP-001
                         </p>
                         
-                        <a href="productos.html?categoria=decoracion#productos" class="product-link">
+                        <a href="{% url 'productos' %}?categoria=decoracion#productos" class="product-link">
                             Ver producto →
                         </a>
 
@@ -365,7 +366,7 @@
                         </span>
 
                         <div class="image-placeholder">
-                            <img src="img/papeleria.png" alt="" width="100%">
+                            <img src="{% static 'img/papeleria.png' %}" alt="" width="100%">
                         </div>
 
                     </div>
@@ -384,7 +385,7 @@
                             Código: IMP-002
                         </p>
 
-                        <a href="productos.html?categoria=organizacion#productos" class="product-link">
+                        <a href="{% url 'productos' %}?categoria=organizacion#productos" class="product-link">
                             Ver producto →
                         </a>
 
@@ -398,7 +399,7 @@
                     <div class="product-image">
 
                         <div class="image-placeholder">
-                            <img src="img/panalera.png" alt="" width="100%">
+                            <img src="{% static 'img/panalera.png' %}" alt="" width="100%">
                         </div>
 
                     </div>
@@ -417,7 +418,7 @@
                             Código: IMP-003
                         </p>
 
-                        <a href="productos.html?categoria=ninos#productos" class="product-link">
+                        <a href="{% url 'productos' %}?categoria=ninos#productos" class="product-link">
                             Ver producto →
                         </a>
 
@@ -435,7 +436,7 @@
                         </span>
 
                         <div class="image-placeholder">
-                            <img src="img/deporte.png" alt="" width="100%">
+                            <img src="{% static 'img/deporte.png' %}" alt="" width="100%">
                         </div>
 
                     </div>
@@ -454,7 +455,7 @@
                             Código: IMP-004
                         </p>
 
-                        <a href="productos.html?categoria=deportes#productos" class="product-link">
+                        <a href="{% url 'productos' %}?categoria=deportes#productos" class="product-link">
                             Ver producto →
                         </a>
 
@@ -578,7 +579,7 @@
 
                 <div class="contact-cards">
 
-                    <a href="sucursales.html">
+                    <a href="{% url 'sucursales' %}">
                         <div class="contact-card">
     
                             <span>📍</span>
@@ -643,7 +644,7 @@
 
             <div class="footer-brand">
 
-                <img src="img/logo.png" alt="Logo">
+                <img src="{% static 'img/logo.png' %}" alt="Logo">
 
                 <p>Tu lugar para descubrir productos para cada ocasión.</p>
 
@@ -671,7 +672,7 @@
                 <a href="#">Inicio</a>
                 <a href="#categorias">Categorías</a>
                 <a href="#destacados">Productos</a>
-                <a href="sucursales.html">Sucursales</a>
+                <a href="{% url 'sucursales' %}">Sucursales</a>
 
             </div>
 
@@ -712,7 +713,7 @@
 
     <!-- JAVASCRIPT -->
 
-    <script src="js/home.js"></script>
+    <script src="{% static 'js/home.js' %}"></script>
 
 </body>
 </html>
