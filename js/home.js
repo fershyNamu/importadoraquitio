@@ -7,10 +7,6 @@ const prevButton = document.getElementById("prevSlide");
 const menuButton = document.getElementById("menuButton");
 const navMenu = document.querySelector(".nav-menu");
 
-menuButton.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-});
-
 let currentSlide = 0;
 let autoSlide;
 
@@ -59,24 +55,28 @@ function previousSlide() {
     showSlide(previous);
 }
 
-/* BOTONES */
+/* BOTONES (solo existen en el hero de home.html) */
 
-nextButton.addEventListener("click", () => {
+if (nextButton && prevButton) {
 
-    nextSlide();
+    nextButton.addEventListener("click", () => {
 
-    restartAutoSlide();
+        nextSlide();
 
-});
+        restartAutoSlide();
+
+    });
 
 
-prevButton.addEventListener("click", () => {
+    prevButton.addEventListener("click", () => {
 
-    previousSlide();
+        previousSlide();
 
-    restartAutoSlide();
+        restartAutoSlide();
 
-});
+    });
+
+}
 
 
 /* DOTS */
