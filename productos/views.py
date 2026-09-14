@@ -1,20 +1,12 @@
 from django.shortcuts import render
 
-# Create your views here.
-from django.shortcuts import render
+from .models import Producto
 
 
-def home(request):
-    return render(request, 'home.html')
+def lista_productos(request):
+    """Catálogo de productos: antes productos.html era HTML estático
+    con productos de ejemplo escritos a mano; ahora se listan los
+    productos reales cargados desde el admin."""
+    productos = Producto.objects.filter(disponible=True).order_by('nombre')
+    return render(request, 'productos.html', {'productos': productos})
 
-
-def categorias(request):
-    return render(request, 'categorias.html')
-
-
-def productos(request):
-    return render(request, 'productos.html')
-
-
-def sucursales(request):
-    return render(request, 'sucursales.html')

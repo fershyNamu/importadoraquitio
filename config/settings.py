@@ -124,9 +124,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'img',
 ]
 
-# Media files (fotos subidas desde el admin, ej. fotos de productos)
-# https://docs.djangoproject.com/en/6.1/topics/files/
-
+# Archivos subidos por el usuario (p. ej. Producto.imagen)
+# Antes no estaban definidos, así que las imágenes subidas desde el
+# admin no se podían servir ni en desarrollo.
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
@@ -134,4 +134,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+MAILERS = {
+    'default': {
+        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+    },
+}

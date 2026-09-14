@@ -14,24 +14,29 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-"""
-URL configuration for config project.
-"""
-from django.contrib import admin
-from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import path
+from django.views.generic import TemplateView
 
-from productos import views
+from productos import views as productos_views
 
 urlpatterns = [
-    path('panel-quitio/', admin.site.urls),
+    path('admin/', admin.site.urls),
 
-    path('', views.home, name='home'),
-    path('categorias/', views.categorias, name='categorias'),
-    path('productos/', views.productos, name='productos'),
-    path('sucursales/', views.sucursales, name='sucursales'),
+    # Páginas del sitio. Se mantienen las mismas rutas que ya usaba
+    # la navegación estática (home.html, categorias.html, etc.) para
+    # no romper los enlaces existentes entre páginas.
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('home.html', TemplateView.as_view(template_name='home.html'), name='home_html'),
+    path('categorias.html', TemplateView.as_view(template_name='categorias.html'), name='categorias'),
+    path('productos.html', productos_views.lista_productos, name='productos'),
+    path('sucursales.html', TemplateView.as_view(template_name='sucursales.html'), name='sucursales'),
 ]
 
+# Sirve los archivos subidos (Producto.imagen) durante desarrollo.
+# Sin esto, DEBUG=True no era suficiente porque MEDIA_URL/MEDIA_ROOT
+# no estaban definidos y no había ninguna ruta que los expusiera.
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
