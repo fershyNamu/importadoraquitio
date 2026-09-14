@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sesión cerrada | Importaciones Quitio</title>
+
+    <link rel="stylesheet" href="{% static 'css/admin-login.css' %}">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <!-- LOGO / MARCA -->
+            <div class="brand">
+                <div class="brand-icon">IQ</div>
+                <h1>Importaciones Quitio</h1>
+            </div>
+
+
+            <!-- MENSAJE -->
+            <div class="welcome">
+                <h2>Sesión cerrada</h2>
+                <p>Saliste correctamente del panel administrativo.</p>
+            </div>
+
+
+            <!-- BOTÓN: INICIAR SESIÓN DE NUEVO -->
+            <a href="{% url 'admin:login' %}" class="login-button" style="display:block; text-decoration:none; text-align:center;">
+                Iniciar sesión de nuevo
+            </a>
+
+
+            <!-- VOLVER -->
+            <button class="back-link" onclick="window.location.href='/'">
+                ← Volver al sitio web
+            </button>
+
+        </section>
+
+    </main>
+
+    <div class="floating-circles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</body>
+</html>

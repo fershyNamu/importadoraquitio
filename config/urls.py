@@ -23,7 +23,7 @@ from django.views.generic import TemplateView
 from productos import views as productos_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('panel-quitio/', admin.site.urls),
 
     # Páginas del sitio. Se mantienen las mismas rutas que ya usaba
     # la navegación estática (home.html, categorias.html, etc.) para

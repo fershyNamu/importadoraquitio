@@ -119,9 +119,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'css',
-    BASE_DIR / 'js',
-    BASE_DIR / 'img',
+    ('css', BASE_DIR / 'css'),
+    ('js', BASE_DIR / 'js'),
+    ('img', BASE_DIR / 'img'),
 ]
 
 # Archivos subidos por el usuario (p. ej. Producto.imagen)
