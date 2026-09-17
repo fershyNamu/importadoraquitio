@@ -31,7 +31,7 @@
                 <a href="{% url 'sucursales' %}">Sucursales</a>
             </nav>
 
-            <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos." class="nav-button">
+            <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos." class="nav-button">
                 Contáctanos
             </a>
 
@@ -513,7 +513,7 @@
 
         <!-- ================= ENVÍOS ================= -->
 
-        <section class="shipping-section">
+        <section class="shipping-section" id="envios">
 
             <div class="shipping-content">
 
@@ -539,7 +539,7 @@
 
                 </div>
 
-                <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20obtener%20información%20de%20las%20opciones%20de%20envío." class="shipping-button">
+                <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20obtener%20información%20de%20las%20opciones%20de%20envío." class="shipping-button">
                     Consultar envío →
                 </a>
 
@@ -569,7 +569,7 @@
                         a encontrar lo que necesitas.
                     </p>
 
-                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos." class="whatsapp-button">
+                    <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos." class="whatsapp-button">
                         <span>💬</span>
                         Escríbenos por WhatsApp
                     </a>
@@ -594,7 +594,7 @@
                     </a>
                 
 
-                    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos.">
+                    <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos.">
                         <div class="contact-card">
 
                             <span>📱</span>
@@ -673,16 +673,7 @@
                 <a href="#categorias">Categorías</a>
                 <a href="#destacados">Productos</a>
                 <a href="{% url 'sucursales' %}">Sucursales</a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>  Ayuda   </h3>
-                <a href="#">Contacto</a>
-                <a href="#">Envíos</a>
-                <a href="#">Preguntas frecuentes</a>
+                <a href="{% url 'home' %}#envios">Envíos</a>
 
             </div>
 
@@ -702,7 +693,7 @@
 
     <!-- ================= WHATSAPP ================= -->
 
-    <a href="https://wa.me/593XXXXXXXXX?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos."
+    <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos."
         class="floating-whatsapp"
         target="_blank"
         aria-label="Contactar por WhatsApp">
