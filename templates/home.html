@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Importadora Quitio | Productos para todos</title>
+    <meta name="description" content="Importadora Quitio: productos para el hogar, cocina, decoración y más. Consulta precios y disponibilidad por WhatsApp.">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -669,7 +670,7 @@
             <div class="footer-column">
 
                 <h3>Navegación</h3>
-                <a href="#">Inicio</a>
+                <a href="{% url 'home' %}">Inicio</a>
                 <a href="#categorias">Categorías</a>
                 <a href="#destacados">Productos</a>
                 <a href="{% url 'sucursales' %}">Sucursales</a>

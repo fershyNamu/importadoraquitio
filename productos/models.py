@@ -1,4 +1,13 @@
+from django.core.exceptions import ValidationError
 from django.db import models
+
+# 5 MB máximo por imagen subida desde el admin
+MAX_IMAGEN_BYTES = 5 * 1024 * 1024
+
+
+def validar_tamano_imagen(imagen):
+    if imagen and imagen.size > MAX_IMAGEN_BYTES:
+        raise ValidationError('La imagen no puede superar los 5 MB.')
 
 
 class Producto(models.Model):
@@ -37,7 +46,10 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=200)
     descripcion = models.TextField(blank=True)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
-    imagen = models.ImageField(upload_to='productos/', blank=True, null=True)
+    imagen = models.ImageField(
+        upload_to='productos/', blank=True, null=True,
+        validators=[validar_tamano_imagen],
+    )
     categoria = models.CharField(
         max_length=100, blank=True, choices=CATEGORIA_CHOICES
     )

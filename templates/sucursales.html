@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Importadora Quitio | Productos para todos</title>
+    <title>Sucursales | Importadora Quitio</title>
+    <meta name="description" content="Encuentra las sucursales de Importadora Quitio y contáctanos directamente por WhatsApp.">
     <link rel="stylesheet" href="{% static 'css/sucursales.css' %}">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -318,9 +319,9 @@
             <div class="footer-column">
 
                 <h3>  Ayuda   </h3>
-                <a href="#">Contacto</a>
-                <a href="#">Envíos</a>
-                <a href="#">Preguntas frecuentes</a>
+                <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20más%20información." target="_blank">Contacto</a>
+                <a href="{% url 'home' %}#envios">Envíos</a>
+                <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20tengo%20una%20pregunta." target="_blank">Preguntas frecuentes</a>
 
             </div>
 
