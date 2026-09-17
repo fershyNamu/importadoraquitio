@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/6.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,12 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8gwvs72apesij9$o_%)*nkq=r%j)z-^4u(a$+8@asr(wco1_93'
-
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'django-insecure-8gwvs72apesij9$o_%)*nkq=r%j)z-^4u(a$+8@asr(wco1_93'  # solo se usa si no hay variable de entorno (desarrollo local)
+)
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =  os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') if os.environ.get('ALLOWED_HOSTS') else []
 
 
 # Application definition
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',   # 👈 nueva
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -128,6 +131,8 @@ STATICFILES_DIRS = [
     ('img', BASE_DIR / 'img'),
 ]
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 # Archivos subidos por el usuario (p. ej. Producto.imagen)
 # Antes no estaban definidos, así que las imágenes subidas desde el
 # admin no se podían servir ni en desarrollo.
@@ -142,3 +147,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Número de WhatsApp del negocio (formato: 593XXXXXXXXX, sin espacios ni +)
 WHATSAPP_NUMBER = '593999128274'  # 👈 reemplaza esto con el número real
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
