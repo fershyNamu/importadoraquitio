@@ -891,11 +891,17 @@ section {
 /* IMAGEN */
 
 .product-image {
-    height: 100%;
-    width: 100%;
+    height: 280px;
     position: relative;
     background: var(--gris-claro);
     overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* Efecto sobre imagen */
