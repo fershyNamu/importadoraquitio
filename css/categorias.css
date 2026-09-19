@@ -891,7 +891,7 @@ section {
 /* IMAGEN */
 
 .product-image {
-    height: 280px;
+    height: 100%;
     position: relative;
     background: var(--gris-claro);
     overflow: hidden;
