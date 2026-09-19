@@ -745,6 +745,13 @@ section {
     overflow: hidden;
 }
 
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 /* Efecto sobre imagen */
 
 .product-image::after {
