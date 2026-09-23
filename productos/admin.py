@@ -6,4 +6,4 @@ from .models import Producto
 class ProductoAdmin(admin.ModelAdmin):
     list_display = ('codigo','nombre','precio', 'categoria', 'disponible')
     list_filter = ('categoria', 'disponible')
-    search_fields = ('nombre','codigo', 'categoria')
+    search_fields = ('codigo','nombre', 'categoria')
