@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ producto.nombre }} | Importadora Quitio</title>
+    <meta name="description" content="{{ producto.nombre }} - Importadora Quitio. Consulta disponibilidad y precio por WhatsApp.">
+    <link rel="stylesheet" href="{% static 'css/categorias.css' %}">
+    <link rel="stylesheet" href="{% static 'css/productos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/producto-detalle.css' %}">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'home' %}" class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="Logo de la importadora">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="{% url 'home' %}">Inicio</a>
+                <a href="{% url 'categorias' %}">Categorías</a>
+                <a href="{% url 'productos' %}" class="active">Productos</a>
+                <a href="{% url 'sucursales' %}">Sucursales</a>
+            </nav>
+
+            <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos." class="nav-button">
+                Contáctanos
+            </a>
+
+            <button class="menu-button" id="menuButton">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- ================= MIGA DE PAN ================= -->
+
+        <div class="pd-breadcrumbs">
+            <a href="{% url 'home' %}">Inicio</a>
+            <span>/</span>
+            <a href="{% url 'productos' %}">Productos</a>
+            <span>/</span>
+            <span>{{ producto.nombre }}</span>
+        </div>
+
+        <!-- ================= FICHA DE PRODUCTO ================= -->
+
+        <section class="pd-section">
+
+            <div class="pd-layout">
+
+                <!-- IMAGEN -->
+
+                <div class="pd-image">
+                    {% if not producto.disponible %}
+                    <span class="product-tag">AGOTADO</span>
+                    {% endif %}
+                    {% if producto.imagen %}
+                    <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                    {% else %}
+                    <div class="image-placeholder">
+                        <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- INFORMACIÓN -->
+
+                <div class="pd-info">
+
+                    <span class="product-category">{{ producto.get_categoria_display }}</span>
+                    <h1>{{ producto.nombre }}</h1>
+
+                    <p class="pd-disponibilidad">
+                        {% if producto.disponible %}
+                        <i class="fa-solid fa-circle-check" style="color:#1f9d55;"></i> Disponible
+                        {% else %}
+                        <i class="fa-solid fa-circle-xmark" style="color:#e81713;"></i> Agotado por ahora
+                        {% endif %}
+                    </p>
+
+                    <div class="pd-descripcion">
+                        <h2>Sobre este producto</h2>
+                        <p>{{ producto.descripcion|default:"No hay descripción disponible." }}</p>
+                    </div>
+
+                </div>
+
+                <!-- TARJETA DE PRECIO / WHATSAPP -->
+
+                <aside class="pd-card">
+
+                    <span class="pd-card-label">Precio</span>
+                    <strong class="pd-price">${{ producto.precio }}</strong>
+
+                    <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20preguntar%20por%20este%20producto%3A%20{{ producto.nombre|urlencode }}"
+                       class="pd-whatsapp-button"
+                       target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Preguntar por WhatsApp
+                    </a>
+
+                    <p class="pd-card-note">Te responderemos con disponibilidad, precio final y formas de envío.</p>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+        <!-- ================= PRODUCTOS SIMILARES ================= -->
+
+        {% if similares %}
+        <section class="pd-similares">
+
+            <h2>Productos similares que podrían gustarte</h2>
+
+            <div class="products-grid">
+
+                {% for similar in similares %}
+                <article class="product-card">
+                    <div class="product-image">
+                        {% if similar.imagen %}
+                        <img src="{{ similar.imagen.url }}" alt="{{ similar.nombre }}">
+                        {% else %}
+                        <div class="image-placeholder">
+                            <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">{{ similar.get_categoria_display }}</span>
+                        <h3>{{ similar.nombre }}</h3>
+                        <a href="{% url 'producto_detalle' similar.pk %}" class="product-link">
+                            Ver más →
+                        </a>
+                    </div>
+                </article>
+                {% endfor %}
+
+            </div>
+
+        </section>
+        {% endif %}
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-shapes">
+             <span class="shape shape-1"></span>
+             <span class="shape shape-2"></span>
+             <span class="shape shape-3"></span>
+             <span class="shape shape-4"></span>
+             <span class="shape shape-5"></span>
+        </div>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <img src="{% static 'img/logo.png' %}" alt="Logo">
+
+                <p>Tu lugar para descubrir productos para cada ocasión.</p>
+
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@importacionesquitio" class="social-link" target="_blank" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.instagram.com/importacionesquitio/" class="social-link" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/importacionesquitio?rdid=UnvMfJYsNur8oWDL&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19fRbdvwBQ%2F#" class="social-link" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://web.telegram.org/a/#-1004450258522" class="social-link" target="_blank" aria-label="Telegram">
+                    <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Navegación</h3>
+                <a href="{% url 'home' %}">Inicio</a>
+                <a href="{% url 'categorias' %}">Categorías</a>
+                <a href="{% url 'productos' %}">Productos</a>
+                <a href="{% url 'sucursales' %}">Sucursales</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>  Ayuda   </h3>
+                <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20más%20información." target="_blank">Contacto</a>
+                <a href="{% url 'home' %}#envios">Envíos</a>
+                <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20tengo%20una%20pregunta." target="_blank">Preguntas frecuentes</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Importadora. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= WHATSAPP FLOTANTE ================= -->
+
+    <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20obtener%20información%20sobre%20sus%20productos."
+        class="floating-whatsapp"
+        target="_blank"
+        aria-label="Contactar por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="{% static 'js/home.js' %}"></script>
+
+</body>
+</html>

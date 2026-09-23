@@ -32,6 +32,7 @@ urlpatterns = [
     path('home.html', TemplateView.as_view(template_name='home.html'), name='home_html'),
     path('categorias.html', TemplateView.as_view(template_name='categorias.html'), name='categorias'),
     path('productos.html', productos_views.lista_productos, name='productos'),
+    path('productos/<int:pk>/', productos_views.detalle_producto, name='producto_detalle'),
     path('sucursales.html', TemplateView.as_view(template_name='sucursales.html'), name='sucursales'),
 ]
 

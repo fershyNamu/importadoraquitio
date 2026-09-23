@@ -161,8 +161,8 @@
                         <span class="product-category">{{ producto.get_categoria_display }}</span>
                         <h3>{{ producto.nombre }}</h3>
                         <p>{{ producto.descripcion }}</p>
-                        <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20información%20sobre%20{{ producto.nombre|urlencode }}" class="product-link" target="_blank">
-                            Consultar precio →
+                        <a href="{% url 'producto_detalle' producto.pk %}" class="product-link">
+                            Ver más →
                         </a>
                     </div>
                 </article>
