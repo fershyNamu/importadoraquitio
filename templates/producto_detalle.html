@@ -67,13 +67,16 @@
 
                 <!-- IMAGEN -->
 
-                <div class="pd-image">
+                <div class="pd-image" id="pdImageContainer">
                     {% if not producto.disponible %}
-                    <span class="product-tag">AGOTADO</span>
+                        <span class="product-tag">AGOTADO</span>
                     {% endif %}
+
                     {% if producto.imagen %}
-                    <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+                        <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" id="pdMainImage">
+                        <div class="img-zoom-lens" id="imgZoomLens"></div>
                     {% else %}
+
                     <div class="image-placeholder">
                         <i class="fa-solid fa-image"></i>&nbsp;Foto del producto
                     </div>
@@ -254,6 +257,7 @@
     <!-- JAVASCRIPT -->
 
     <script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'js/zoom.js' %}"></script>
 
 </body>
 </html>
