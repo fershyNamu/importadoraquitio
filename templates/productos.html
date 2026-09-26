@@ -127,6 +127,7 @@
                 <button class="prod-filter active" data-filter="todos">Todos</button>
                 <button class="prod-filter" data-filter="cocina">Cocina</button>
                 <button class="prod-filter" data-filter="vajilla">Vajilla y Platos</button>
+                <button class="prod-filter" data-filter="jarros">Jarros</button>
                 <button class="prod-filter" data-filter="decoracion">Decoración</button>
                 <button class="prod-filter" data-filter="organizacion">Organización</button>
                 <button class="prod-filter" data-filter="limpieza">Limpieza</button>
@@ -169,6 +170,8 @@
                 {% endfor %}
 
             </div>
+
+<div class="prod-pagination" id="prodPagination"></div>
 
             {% if not productos %}
             <p class="cat-empty visible" id="prodEmpty">

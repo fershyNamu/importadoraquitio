@@ -17,6 +17,7 @@ class Producto(models.Model):
     # con productos que vienen de la base de datos.
     CATEGORIA_COCINA = 'cocina'
     CATEGORIA_VAJILLA = 'vajilla'
+    CATEGORIA_JARROS = 'jarros'
     CATEGORIA_DECORACION = 'decoracion'
     CATEGORIA_ORGANIZACION = 'organizacion'
     CATEGORIA_LIMPIEZA = 'limpieza'
@@ -31,6 +32,7 @@ class Producto(models.Model):
     CATEGORIA_CHOICES = [
         (CATEGORIA_COCINA, 'Cocina'),
         (CATEGORIA_VAJILLA, 'Vajilla y Platos'),
+        (CATEGORIA_JARROS, 'Jarros'),
         (CATEGORIA_DECORACION, 'Decoración'),
         (CATEGORIA_ORGANIZACION, 'Organización'),
         (CATEGORIA_LIMPIEZA, 'Limpieza'),

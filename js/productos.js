@@ -24,25 +24,59 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function applyFilters() {
-        const query = (searchInput.value || "").toLowerCase().trim();
-        let visibleCount = 0;
+const PRODUCTS_PER_PAGE = 12;
+let currentPage = 1;
+const pagination = document.getElementById("prodPagination");
 
-        cards.forEach(card => {
-            const category = card.dataset.category || "";
-            const searchData = (card.dataset.search || "") + " " + card.querySelector("h3").textContent.toLowerCase();
+currentPage = 1;
 
-            const matchesCategory = activeFilter === "todos" || category === activeFilter;
-            const matchesSearch = query === "" || searchData.toLowerCase().includes(query);
+function applyFilters() {
+    const query = (searchInput.value || "").toLowerCase().trim();
+    const matchingCards = [];
 
-            const visible = matchesCategory && matchesSearch;
-            card.classList.toggle("hidden-card", !visible);
+    cards.forEach(card => {
+        const category = card.dataset.category || "";
+        const searchData = (card.dataset.search || "") + " " + card.querySelector("h3").textContent.toLowerCase();
 
-            if (visible) visibleCount++;
+        const matchesCategory = activeFilter === "todos" || category === activeFilter;
+        const matchesSearch = query === "" || searchData.toLowerCase().includes(query);
+
+        if (matchesCategory && matchesSearch) {
+            matchingCards.push(card);
+        } else {
+            card.classList.add("hidden-card");
+        }
+    });
+
+    emptyMessage.classList.toggle("visible", matchingCards.length === 0);
+
+    const totalPages = Math.max(1, Math.ceil(matchingCards.length / PRODUCTS_PER_PAGE));
+    if (currentPage > totalPages) currentPage = 1;
+
+    matchingCards.forEach((card, index) => {
+        const page = Math.floor(index / PRODUCTS_PER_PAGE) + 1;
+        card.classList.toggle("hidden-card", page !== currentPage);
+    });
+
+    renderPagination(totalPages);
+}
+
+function renderPagination(totalPages) {
+    pagination.innerHTML = "";
+    if (totalPages <= 1) return;
+
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = i;
+        btn.className = "page-btn" + (i === currentPage ? " active" : "");
+        btn.addEventListener("click", () => {
+            currentPage = i;
+            applyFilters();
+            document.getElementById("productos").scrollIntoView({ behavior: "smooth" });
         });
-
-        emptyMessage.classList.toggle("visible", visibleCount === 0);
+        pagination.appendChild(btn);
     }
+}
 
     filterButtons.forEach(button => {
         button.addEventListener("click", () => {

@@ -59,3 +59,21 @@
         flex: 0 0 auto;
     }
 }
+
+.prod-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+.page-btn {
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.page-btn.active {
+    background: #000;
+    color: white;
+}
