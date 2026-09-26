@@ -168,3 +168,9 @@
         height: 320px;
     }
 }
+
+.pd-codigo {
+    color: #59636e;
+    font-size: 0.95rem;
+    margin-top: 6px;
+}

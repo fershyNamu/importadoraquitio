@@ -95,6 +95,12 @@
                         {% endif %}
                     </p>
 
+                    {% if producto.codigo %}
+                    <p class="pd-codigo">
+                        <i class="fa-solid fa-barcode"></i> Código: <strong>{{ producto.codigo }}</strong>
+                    </p>
+                    {% endif %}
+
                     <div class="pd-descripcion">
                         <h2>Sobre este producto</h2>
                         <p>{{ producto.descripcion|default:"No hay descripción disponible." }}</p>
