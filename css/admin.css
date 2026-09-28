@@ -767,3 +767,8 @@ select:focus {
     }
 
 }
+
+/* Lista de productos: usar todo el ancho disponible */
+.change-list #content-main {
+    width: 100% !important;
+}
