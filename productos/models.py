@@ -62,3 +62,21 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+
+    def tiene_variantes(self):
+        return self.variantes.exists()
+
+    def precio_desde(self):
+        if self.tiene_variantes():
+            return self.variantes.order_by('precio').first().precio
+        return self.precio
+
+class VarianteProducto(models.Model):
+    producto = models.ForeignKey(Producto, related_name='variantes', on_delete=models.CASCADE)
+    medida = models.CharField(max_length=100, help_text="Ej: 120cm, 240cm, Talla M")
+    codigo = models.CharField(max_length=50, unique=True)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    disponible = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.producto.nombre} - {self.medida}"

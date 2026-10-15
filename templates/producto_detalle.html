@@ -116,7 +116,11 @@
                 <aside class="pd-card">
 
                     <span class="pd-card-label">Precio</span>
-                    <strong class="pd-price">${{ producto.precio }}</strong>
+                    {% if producto.tiene_variantes %}
+                    Desde ${{ producto.precio_desde }}
+                    {% else %}
+                    ${{ producto.precio }}
+                    {% endif %}
 
                     <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20preguntar%20por%20este%20producto%3A%20{{ producto.nombre|urlencode }}"
                        class="pd-whatsapp-button"
