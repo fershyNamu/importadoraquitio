@@ -16,6 +16,7 @@ class Producto(models.Model):
     # en productos.html, para que el filtrado en JS siga funcionando
     # con productos que vienen de la base de datos.
     CATEGORIA_COCINA = 'cocina'
+    CATEGORIA_NAVIDAD = 'navidad'
     CATEGORIA_VAJILLA = 'vajilla'
     CATEGORIA_JARROS = 'jarros'
     CATEGORIA_DECORACION = 'decoracion'
@@ -30,6 +31,7 @@ class Producto(models.Model):
     CATEGORIA_ELECTRO = 'electro'
 
     CATEGORIA_CHOICES = [
+        (CATEGORIA_NAVIDAD, 'Navidad'),
         (CATEGORIA_COCINA, 'Cocina'),
         (CATEGORIA_VAJILLA, 'Vajilla y Platos'),
         (CATEGORIA_JARROS, 'Jarros'),
