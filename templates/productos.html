@@ -125,6 +125,7 @@
 
             <div class="prod-filters" id="prodFilters">
                 <button class="prod-filter active" data-filter="todos">Todos</button>
+                <button class="prod-filter prod-filter-navidad" data-filter="navidad">🎄 Navidad</button>
                 <button class="prod-filter" data-filter="cocina">Cocina</button>
                 <button class="prod-filter" data-filter="vajilla">Vajilla y Platos</button>
                 <button class="prod-filter" data-filter="jarros">Jarros</button>
@@ -145,7 +146,7 @@
             <div class="products-grid" id="prodGrid">
 
                 {% for producto in productos %}
-                <article class="product-card" data-category="{{ producto.categoria }}" data-search="{{ producto.get_categoria_display|lower }}">
+                <article class="product-card{% if producto.categoria == 'navidad' %} product-navidad{% endif %}" data-category="{{ producto.categoria }}" data-search="{{ producto.get_categoria_display|lower }}">
                     <div class="product-image">
                         {% if not producto.disponible %}
                         <span class="product-tag">AGOTADO</span>
