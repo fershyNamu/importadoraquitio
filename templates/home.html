@@ -55,43 +55,45 @@
             <div class="hero-slider">
 
                 <!-- SLIDE 1 -->
+                {% if TEMA_NAVIDAD %}
+            <!-- SLIDE NAVIDAD -->
+            <article class="hero-slide active">
+                <div class="hero-background hero-bg-navidad"></div>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <span class="hero-tag">
+                            CATÁLOGO NAVIDEÑO
+                        </span>
+
+                        <h1>
+                            ¡Llegó la Navidad
+                        <span>a Importadora Quitio!</span>
+                        </h1>
+
+                        <p>
+                            Adornos, luces, árboles y regalos para toda la familia.
+                            Disponible al por mayor y menor.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="{% url 'productos' %}?categoria=navidad#productos" class="btn-primary">
+                                Ver catálogo navideño
+                            <span>→</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-image">
+                    </div>
+                </div>
+            </article>
 
                 <article class="hero-slide{% if not TEMA_NAVIDAD %} active{% endif %}">
 
-                    {% if TEMA_NAVIDAD %}
-                <!-- SLIDE NAVIDAD -->
-                <article class="hero-slide active">
-                    <div class="hero-background hero-bg-navidad"></div>
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <span class="hero-tag">
-                                CATÁLOGO NAVIDEÑO
-                            </span>
+                    {% endif %}
 
-                            <h1>
-                                ¡Llegó la Navidad
-                            <span>a Importadora Quitio!</span>
-                            </h1>
-
-                            <p>
-                                Adornos, luces, árboles y regalos para toda la familia.
-                                Disponible al por mayor y menor.
-                            </p>
-
-                            <div class="hero-buttons">
-                                <a href="{% url 'productos' %}?categoria=navidad#productos" class="btn-primary">
-                                    Ver catálogo navideño
-                                <span>→</span>
-                                </a>
-                            </div>
-
-                        </div>
-
-                        <div class="hero-image">
-                        </div>
-                    </div>
-                </article>
-{% endif %}
+-----------slide 2-------------------
 
                     <div class="hero-background hero-bg-1"></div>
                     <div class="hero-content">
@@ -129,7 +131,7 @@
 
                 </article>
 
-                <!-- SLIDE 2 -->
+                <!-- SLIDE 3 -->
 
                 <article class="hero-slide">
 
@@ -173,7 +175,7 @@
                 </article>
 
 
-                <!-- SLIDE 3 -->
+                <!-- SLIDE 4 -->
 
                 <article class="hero-slide">
 
