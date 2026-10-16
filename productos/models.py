@@ -73,6 +73,7 @@ class Producto(models.Model):
 
 class VarianteProducto(models.Model):
     producto = models.ForeignKey(Producto, related_name='variantes', on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to='variantes/', blank=True, null=True)
     medida = models.CharField(max_length=100, help_text="Ej: 120cm, 240cm, Talla M")
     codigo = models.CharField(max_length=50, unique=True)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
