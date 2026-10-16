@@ -17,3 +17,9 @@ def dashboard_stats(request):
         'total_usuarios': User.objects.count(),
         'total_grupos': Group.objects.count(),
     }
+
+# tu_app/context_processors.py
+from django.conf import settings
+
+def tema(request):
+    return {'TEMA_NAVIDAD': getattr(settings, 'TEMA_NAVIDAD', False)}
