@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'config.context_processors.whatsapp_number',   
+                'config.context_processors.tema',   
                 'config.context_processors.dashboard_stats',   
             ],
         },
