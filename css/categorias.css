@@ -1747,6 +1747,8 @@ section {
 .cat-navidad h3 { color: #c8102e; }
 .cat-navidad .cat-tag { background: #e6f4ea; color: #1b5e20; }
 .cat-navidad .cat-cta { color: #c8102e; font-weight: 700; }
+.cat-card.cat-navidad:hover .cat-icon { background: #a30d25; color: #fff; }
+.cat-card.cat-navidad:hover .cat-tag { background: #e6f4ea; color: #1b5e20; }
 
 .cat-badge {
     position: absolute;
