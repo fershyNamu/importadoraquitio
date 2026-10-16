@@ -117,7 +117,7 @@
 
                     {% if producto.codigo %}
                     <p class="pd-codigo">
-                        <i class="fa-solid fa-barcode"></i> Código: <strong>{{ producto.codigo }}</strong>
+                        <i class="fa-solid fa-barcode"></i> Código: <strong id="pdCodigo">{{ producto.codigo }}</strong>
                     </p>
                     {% endif %}
 
@@ -133,11 +133,7 @@
                 <aside class="pd-card">
 
                     <span class="pd-card-label">Precio</span>
-                    {% if producto.tiene_variantes %}
-                    Desde ${{ producto.precio_desde }}
-                    {% else %}
-                    ${{ producto.precio }}
-                    {% endif %}
+                    <p class="pd-precio" id="pdPrecio">${{ producto.precio }}</p>
 
                     <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20preguntar%20por%20este%20producto%3A%20{{ producto.nombre|urlencode }}"
                        class="pd-whatsapp-button"
