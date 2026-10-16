@@ -772,3 +772,29 @@ select:focus {
 .change-list #content-main {
     width: 100% !important;
 }
+
+/* Página de editar/agregar producto: usar todo el ancho */
+.change-form #content-main {
+    width: 100% !important;
+}
+
+/* Tabla de variantes: que se pueda desplazar horizontal en vez de amontonarse */
+.inline-group {
+    overflow-x: auto;
+}
+
+#variantes-group table {
+    width: 100%;
+    min-width: 900px;
+}
+
+#variantes-group th,
+#variantes-group td {
+    padding: 8px 10px;
+    white-space: nowrap;
+}
+
+/* Oculta el texto "Falda de Arbol..." que se encima con el botón de imagen */
+#variantes-group .inline-related .original {
+    display: none;
+}
