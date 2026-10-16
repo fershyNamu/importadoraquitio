@@ -83,6 +83,23 @@
                     {% endif %}
                 </div>
 
+                {% if producto.tiene_variantes %}
+                <div class="pd-variantes">
+                    <p class="pd-variantes-label">Elige una opción:</p>
+                    <div class="pd-variantes-opciones" id="variantesOpciones">
+                        {% for variante in producto.variantes.all %}
+                        <button type="button"
+                                class="variante-btn {% if forloop.first %}active{% endif %}"
+                                data-precio="{{ variante.precio }}"
+                                data-codigo="{{ variante.codigo }}"
+                                data-disponible="{{ variante.disponible|yesno:'true,false' }}"
+                                data-imagen="{% if variante.imagen %}{{ variante.imagen.url }}{% endif %}">
+                            {{ variante.medida }}
+                        </button>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
                 <!-- INFORMACIÓN -->
 
                 <div class="pd-info">
