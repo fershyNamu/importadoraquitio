@@ -1,0 +1,56 @@
+/* ===== LUCES NAVIDEÑAS (debajo del navbar) ===== */
+.navidad-luces {
+    position: fixed;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    display: flex;
+    gap: 38px;
+    padding-left: 14px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 999;
+}
+.navidad-luces::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #2d2d2d;
+    opacity: 0.45;
+}
+.navidad-luces span {
+    flex: 0 0 12px;
+    height: 18px;
+    margin-top: 3px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: currentColor;
+    box-shadow: 0 0 10px 2px currentColor;
+    animation: navidadParpadeo 1.6s ease-in-out infinite;
+}
+.navidad-luces span:nth-child(4n+1) { color: #e81713; }
+.navidad-luces span:nth-child(4n+2) { color: #1b9a4a; animation-delay: 0.4s; }
+.navidad-luces span:nth-child(4n+3) { color: #ffc107; animation-delay: 0.8s; }
+.navidad-luces span:nth-child(4n+4) { color: #06419d; animation-delay: 1.2s; }
+
+@keyframes navidadParpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+}
+
+/* ===== NIEVE ===== */
+.navidad-nieve {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 800; /* debajo del botón de WhatsApp (900) y del navbar (1000) */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navidad-luces span { animation: none; }
+}
