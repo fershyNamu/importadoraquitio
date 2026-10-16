@@ -22,4 +22,4 @@ def dashboard_stats(request):
 from django.conf import settings
 
 def tema(request):
-    return {'TEMA_NAVIDAD': getattr(settings, 'TEMA_NAVIDAD', False)}
+    return {'TEMA_NAVIDAD': getattr(settings, 'TEMA_NAVIDAD', True)}

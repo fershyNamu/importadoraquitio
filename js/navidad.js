@@ -1,4 +1,8 @@
 (function () {
+    // true  = la nieve cae solo en el banner (hero) y cuando el filtro "Navidad" está activo
+    // false = la nieve cae siempre, en toda la página
+    const NIEVE_SOLO_EN_ZONAS = true;
+
     const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // ----- Luces -----
@@ -32,10 +36,18 @@
         fase: Math.random() * Math.PI * 2,
     }));
 
+    let mostrar = false;
+    let activo = false;
+    let temporizador;
+
     function dibujar() {
+        if (!activo) {
+            ctx.clearRect(0, 0, w, h);
+            return;
+        }
         ctx.clearRect(0, 0, w, h);
         ctx.fillStyle = "rgba(255,255,255,0.95)";
-        ctx.strokeStyle = "rgba(110,150,215,0.55)"; // borde azulado para que se vea sobre fondo blanco
+        ctx.strokeStyle = "rgba(110,150,215,0.55)";
         ctx.lineWidth = 1;
 
         copos.forEach(c => {
@@ -51,5 +63,56 @@
         });
         requestAnimationFrame(dibujar);
     }
-    dibujar();
+
+    function fijar(valor) {
+        if (valor === mostrar) return;
+        mostrar = valor;
+        canvas.style.opacity = valor ? "1" : "0";
+        if (valor) {
+            clearTimeout(temporizador);
+            if (!activo) {
+                activo = true;
+                requestAnimationFrame(dibujar);
+            }
+        } else {
+            // espera a que termine el desvanecido y detiene la animación (ahorra batería)
+            temporizador = setTimeout(() => { activo = false; }, 700);
+        }
+    }
+
+    if (!NIEVE_SOLO_EN_ZONAS) {
+        fijar(true);
+        return;
+    }
+
+    // Zonas donde sí cae nieve: el hero y el filtro Navidad en productos
+    const hero = document.querySelector(".hero");
+    const filtros = document.getElementById("prodFilters");
+    let heroVisible = false;
+
+    function filtroNavidadActivo() {
+        const boton = document.querySelector('.prod-filter[data-filter="navidad"]');
+        return !!boton && boton.classList.contains("active");
+    }
+
+    function evaluar() {
+        fijar(heroVisible || filtroNavidadActivo());
+    }
+
+    if (hero && "IntersectionObserver" in window) {
+        new IntersectionObserver(entradas => {
+            heroVisible = entradas[0].isIntersecting;
+            evaluar();
+        }, { threshold: 0.25 }).observe(hero);
+    }
+
+    if (filtros) {
+        new MutationObserver(evaluar).observe(filtros, {
+            attributes: true,
+            subtree: true,
+            attributeFilter: ["class"],
+        });
+    }
+
+    evaluar();
 })();
