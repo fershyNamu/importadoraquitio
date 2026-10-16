@@ -7,6 +7,7 @@
     <title>Importadora Quitio | Productos para todos</title>
     <meta name="description" content="Importadora Quitio: productos para el hogar, cocina, decoración y más. Consulta precios y disponibilidad por WhatsApp.">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    {% if TEMA_NAVIDAD %}<link rel="stylesheet" href="{% static 'css/navidad.css' %}">{% endif %}
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +56,43 @@
 
                 <!-- SLIDE 1 -->
 
+                <article class="hero-slide{% if not TEMA_NAVIDAD %} active{% endif %}">
+
+                    {% if TEMA_NAVIDAD %}
+                <!-- SLIDE NAVIDAD -->
                 <article class="hero-slide active">
+                    <div class="hero-background hero-bg-navidad"></div>
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <span class="hero-tag">
+                                CATÁLOGO NAVIDEÑO
+                            </span>
+
+                            <h1>
+                                ¡Llegó la Navidad
+                            <span>a Importadora Quitio!</span>
+                            </h1>
+
+                            <p>
+                                Adornos, luces, árboles y regalos para toda la familia.
+                                Disponible al por mayor y menor.
+                            </p>
+
+                            <div class="hero-buttons">
+                                <a href="{% url 'productos' %}?categoria=navidad#productos" class="btn-primary">
+                                    Ver catálogo navideño
+                                <span>→</span>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="hero-image">
+                            <img src="{% static 'img/navidad.jpeg' %}" alt="Catálogo navideño de Importadora Quitio">
+                        </div>
+                    </div>
+                </article>
+{% endif %}
 
                     <div class="hero-background hero-bg-1"></div>
                     <div class="hero-content">
@@ -194,11 +231,10 @@
             <!-- INDICADORES -->
 
             <div class="slider-dots">
-
-                <button class="dot active" data-slide="0"></button>
-                <button class="dot" data-slide="1"></button>
+                {% if TEMA_NAVIDAD %}<button class="dot active" data-slide="0"></button>{% endif %}
+                <button class="dot{% if not TEMA_NAVIDAD %} active{% endif %}" data-slide="1"></button>
                 <button class="dot" data-slide="2"></button>
-                
+                <button class="dot" data-slide="3"></button>
             </div>
 
         </section>
@@ -223,6 +259,20 @@
                     y descubre nuestra variedad de productos.
                 </p>
                 
+            {% if TEMA_NAVIDAD %}
+            <a href="{% url 'productos' %}?categoria=navidad#productos" class="navidad-destacada">
+                <div class="navidad-destacada-info">
+                    <span class="navidad-destacada-icono">🎄</span>
+                    <div>
+                        <span class="navidad-destacada-nuevo">NUEVO</span>
+                        <h3>Catálogo navideño</h3>
+                        <p>Adornos, luces, árboles y regalos para esta Navidad.</p>
+                    </div>
+                </div>
+                <span class="navidad-destacada-boton">Ver Navidad →</span>
+            </a>
+{% endif %}
+
             </div>
 
 
