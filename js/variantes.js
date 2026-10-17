@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (imagenEl && btn.dataset.imagen) {
                 imagenEl.src = btn.dataset.imagen;
             }
+
+            // Actualiza la medida seleccionada
+                        const medidaEl = document.getElementById("pdMedidaActual");
+            if (medidaEl) {
+                medidaEl.textContent = btn.dataset.medida;
+            }
         });
     });
 
