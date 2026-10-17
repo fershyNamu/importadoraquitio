@@ -7,10 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const zoomLevel = 2.5;
 
-    lens.style.backgroundImage = `url('${image.src}')`;
-
     imageContainer.addEventListener("mousemove", (e) => {
         const rect = image.getBoundingClientRect();
+        lens.style.backgroundImage = `url('${image.src}')`;
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
