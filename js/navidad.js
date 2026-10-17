@@ -93,8 +93,10 @@
         return;
     }
 
-    // En las demás páginas (como Productos), solo cuando el filtro Navidad está activo
+    // En las demás páginas: nieve mientras el hero esté visible, o si el filtro Navidad está activo
+    const hero = document.querySelector(".hero");
     const filtros = document.getElementById("prodFilters");
+    let heroVisible = false;
 
     function filtroNavidadActivo() {
         const boton = document.querySelector('.prod-filter[data-filter="navidad"]');
@@ -102,7 +104,14 @@
     }
 
     function evaluar() {
-        fijar(filtroNavidadActivo());
+        fijar(heroVisible || filtroNavidadActivo());
+    }
+
+    if (hero && "IntersectionObserver" in window) {
+        new IntersectionObserver(entradas => {
+            heroVisible = entradas[0].isIntersecting;
+            evaluar();
+        }, { threshold: 0.25 }).observe(hero);
     }
 
     if (hero && "IntersectionObserver" in window) {
