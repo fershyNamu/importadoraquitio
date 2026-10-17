@@ -92,8 +92,9 @@
                                 class="variante-btn {% if forloop.first %}active{% endif %}"
                                 data-precio="{{ variante.precio|unlocalize }}"                                data-codigo="{{ variante.codigo }}"
                                 data-disponible="{{ variante.disponible|yesno:'true,false' }}"
-                                data-imagen="{% if variante.imagen %}{{ variante.imagen.url }}{% endif %}">
-                            {{ variante.medida }}
+                                data-imagen="{% if variante.imagen %}{{ variante.imagen.url }}{% endif %}"
+                                data-medida="{{ variante.medida }}">
+                                    {{ variante.medida }}
                         </button>
                         {% endfor %}
                     </div>
@@ -121,6 +122,7 @@
                     {% endif %}
 
                     <div class="pd-descripcion">
+                        <p class="pd-medida-actual">Medida seleccionada: <strong id="pdMedidaActual"></strong></p>
                         <h2>Sobre este producto</h2>
                         <p>{{ producto.descripcion|default:"No hay descripción disponible." }}</p>
                     </div>
