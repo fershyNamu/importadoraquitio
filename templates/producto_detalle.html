@@ -90,8 +90,7 @@
                         {% for variante in producto.variantes.all %}
                         <button type="button"
                                 class="variante-btn {% if forloop.first %}active{% endif %}"
-                                data-precio="{{ variante.precio }}"
-                                data-codigo="{{ variante.codigo }}"
+                                data-precio="{{ variante.precio|unlocalize }}"                                data-codigo="{{ variante.codigo }}"
                                 data-disponible="{{ variante.disponible|yesno:'true,false' }}"
                                 data-imagen="{% if variante.imagen %}{{ variante.imagen.url }}{% endif %}">
                             {{ variante.medida }}
@@ -133,7 +132,7 @@
                 <aside class="pd-card">
 
                     <span class="pd-card-label">Precio</span>
-                    <p class="pd-precio" id="pdPrecio">${{ producto.precio }}</p>
+                    <p class="pd-precio" id="pdPrecio">${{ producto.precio|unlocalize }}</p>
 
                     <a href="https://wa.me/{{ whatsapp_number }}?text=Hola%2C%20quisiera%20preguntar%20por%20este%20producto%3A%20{{ producto.nombre|urlencode }}"
                        class="pd-whatsapp-button"
