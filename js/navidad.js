@@ -85,10 +85,16 @@
         return;
     }
 
-    // Zonas donde sí cae nieve: el hero y el filtro Navidad en productos
-    const hero = document.querySelector(".hero");
+    // En la página de Inicio, la nieve cae siempre, de arriba a abajo
+    const esPaginaInicio = document.body.dataset.nievePagina === "inicio";
+
+    if (esPaginaInicio) {
+        fijar(true);
+        return;
+    }
+
+    // En las demás páginas (como Productos), solo cuando el filtro Navidad está activo
     const filtros = document.getElementById("prodFilters");
-    let heroVisible = false;
 
     function filtroNavidadActivo() {
         const boton = document.querySelector('.prod-filter[data-filter="navidad"]');
@@ -96,7 +102,7 @@
     }
 
     function evaluar() {
-        fijar(heroVisible || filtroNavidadActivo());
+        fijar(filtroNavidadActivo());
     }
 
     if (hero && "IntersectionObserver" in window) {
