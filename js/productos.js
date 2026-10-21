@@ -65,18 +65,46 @@ function renderPagination(totalPages) {
     pagination.innerHTML = "";
     if (totalPages <= 1) return;
 
-    for (let i = 1; i <= totalPages; i++) {
+    function agregarBoton(numero) {
         const btn = document.createElement("button");
-        btn.textContent = i;
-        btn.className = "page-btn" + (i === currentPage ? " active" : "");
+        btn.textContent = numero;
+        btn.className = "page-btn" + (numero === currentPage ? " active" : "");
         btn.addEventListener("click", () => {
-            currentPage = i;
+            currentPage = numero;
             applyFilters();
             document.getElementById("productos").scrollIntoView({ behavior: "smooth" });
         });
         pagination.appendChild(btn);
     }
+
+    function agregarPuntos() {
+        const span = document.createElement("span");
+        span.textContent = "...";
+        span.className = "page-dots";
+        pagination.appendChild(span);
+    }
+
+    const vecinas = 1; // cuántas páginas mostrar a cada lado de la actual
+    const paginasAMostrar = [];
+
+    for (let i = 1; i <= totalPages; i++) {
+        const esPrimeraOUltima = i === 1 || i === totalPages;
+        const esCercanaALaActual = i >= currentPage - vecinas && i <= currentPage + vecinas;
+        if (esPrimeraOUltima || esCercanaALaActual) {
+            paginasAMostrar.push(i);
+        }
+    }
+
+    let anterior = 0;
+    paginasAMostrar.forEach(numero => {
+        if (anterior && numero - anterior > 1) {
+            agregarPuntos();
+        }
+        agregarBoton(numero);
+        anterior = numero;
+    });
 }
+
 
     filterButtons.forEach(button => {
         button.addEventListener("click", () => {
