@@ -144,13 +144,14 @@
                 <button class="prod-filter" data-filter="electro">Electrodomésticos y Electrónica</button>
             </div>
 
+            <div class="prod-subfilters" id="prodSubFilters"></div>
+
             <!-- GRID DE PRODUCTOS (datos reales desde la base de datos) -->
 
             <div class="products-grid" id="prodGrid">
 
                 {% for producto in productos %}
-                <article class="product-card{% if producto.categoria == 'navidad' %} product-navidad{% endif %}" data-category="{{ producto.categoria }}" data-search="{{ producto.get_categoria_display|lower }}">
-                    <div class="product-image">
+                    <article class="product-card{% if producto.categoria == 'navidad' %} product-navidad{% endif %}" data-category="{{ producto.categoria }}" data-subcategoria="{{ producto.subcategoria|lower }}" data-search="{{ producto.get_categoria_display|lower }} {{ producto.subcategoria|lower }}">                    <div class="product-image">
                         {% if not producto.disponible %}
                         <span class="product-tag">AGOTADO</span>
                         {% endif %}

@@ -83,3 +83,29 @@
     color: #999;
     user-select: none;
 }
+
+.prod-subfilters {
+    max-width: 1000px;
+    margin: 0 auto 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.sub-filter {
+    border: 1px solid #ddd;
+    background: var(--gris-claro, #f4f6f8);
+    color: var(--gris-texto, #59636e);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.sub-filter.active {
+    background: var(--azul, #06419d);
+    border-color: var(--azul, #06419d);
+    color: white;
+}

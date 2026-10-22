@@ -36,16 +36,18 @@ function applyFilters() {
 
     cards.forEach(card => {
         const category = card.dataset.category || "";
+        const subFiltersContainer = document.getElementById("prodSubFilters");
+        let activeSubFilter = "todas";
         const searchData = (card.dataset.search || "") + " " + card.querySelector("h3").textContent.toLowerCase();
-
         const matchesCategory = activeFilter === "todos" || category === activeFilter;
-        const matchesSearch = query === "" || searchData.toLowerCase().includes(query);
+        const subcategoria = card.dataset.subcategoria || "";
+        const matchesSubcategory = activeSubFilter === "todas" || subcategoria === activeSubFilter;        const matchesSearch = query === "" || searchData.toLowerCase().includes(query);
 
-        if (matchesCategory && matchesSearch) {
+        if (matchesCategory && matchesSubcategory && matchesSearch) {
             matchingCards.push(card);
         } else {
             card.classList.add("hidden-card");
-        }
+        } 
     });
 
     emptyMessage.classList.toggle("visible", matchingCards.length === 0);
@@ -59,6 +61,42 @@ function applyFilters() {
     });
 
     renderPagination(totalPages);
+}
+
+function renderSubFilters(categoria) {
+    subFiltersContainer.innerHTML = "";
+    activeSubFilter = "todas";
+
+    if (categoria === "todos") return;
+
+    const subcategoriasEncontradas = new Set();
+    cards.forEach(card => {
+        if (card.dataset.category === categoria && card.dataset.subcategoria) {
+            subcategoriasEncontradas.add(card.dataset.subcategoria);
+        }
+    });
+
+    if (subcategoriasEncontradas.size === 0) return;
+
+    function agregarChip(valor, texto) {
+        const btn = document.createElement("button");
+        btn.textContent = texto;
+        btn.className = "sub-filter" + (valor === "todas" ? " active" : "");
+        btn.addEventListener("click", () => {
+            subFiltersContainer.querySelectorAll(".sub-filter").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            activeSubFilter = valor;
+            currentPage = 1;
+            applyFilters();
+        });
+        subFiltersContainer.appendChild(btn);
+    }
+
+    agregarChip("todas", "Todas");
+    Array.from(subcategoriasEncontradas).sort().forEach(sub => {
+        const textoBonito = sub.charAt(0).toUpperCase() + sub.slice(1);
+        agregarChip(sub, textoBonito);
+    });
 }
 
 function renderPagination(totalPages) {
@@ -111,6 +149,8 @@ function renderPagination(totalPages) {
             filterButtons.forEach(b => b.classList.remove("active"));
             button.classList.add("active");
             activeFilter = button.dataset.filter;
+            currentPage = 1;
+            renderSubFilters(activeFilter);
             applyFilters();
         });
     });
