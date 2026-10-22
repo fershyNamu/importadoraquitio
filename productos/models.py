@@ -46,6 +46,10 @@ class Producto(models.Model):
         (CATEGORIA_FERRETERIA, 'Ferretería'),
         (CATEGORIA_ELECTRO, 'Electrodomésticos y Electrónica'),
     ]
+    subcategoria = models.CharField(
+        max_length=100, blank=True,
+        help_text="Opcional. Ej: Hieleras, Floreros de Madera, Jarras Medidoras..."
+    )
 
     nombre = models.CharField(max_length=200)
     codigo = models.CharField(max_length=50, unique=True, blank=True, null=True)
