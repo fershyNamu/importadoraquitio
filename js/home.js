@@ -1,6 +1,8 @@
 const slides = document.querySelectorAll(".hero-slide");
 const dots = document.querySelectorAll(".dot");
 
+if (slides.length > 0) {
+
 const nextButton = document.getElementById("nextSlide");
 const prevButton = document.getElementById("prevSlide");
 
@@ -124,3 +126,5 @@ function restartAutoSlide() {
 }
 
 startAutoSlide();
+
+}
